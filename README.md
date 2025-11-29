@@ -114,7 +114,7 @@ Species may wipe each other out or dominate based on evolutionary advantage.
 
 ### 🌱 Ecosystem
 - Fruit-bearing plants  
-- Water plants  
+- Water sources 
 - Dynamic regrowth system  
 
 ### 🐣 Organisms
