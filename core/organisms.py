@@ -11,7 +11,7 @@ class Organism:
         self.id = Organism.next_id
         Organism.next_id += 1
 
-        self.eat_cooldown = 0        # <-- add this
+        self.eat_cooldown = 0        
         self.drink_cooldown = 0
         
         self.x = x

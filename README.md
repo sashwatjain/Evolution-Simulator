@@ -205,3 +205,78 @@ Developer - Sashwat jain
 <p align="center">
   ⭐ If you enjoy this project, give it a star on GitHub!  
 </p>
+
+
+# UML CLASS DIAGRAM — Evolution Simulator V1
+
+                          +----------------------+
+                          |      Simulation      |
+                          +----------------------+
+                          | - agents: list       |
+                          | - plants: list       |
+                          | - tick: int          |
+                          | - pop_history        |
+                          | - speed_hist         |
+                          | - size_hist          |
+                          | - species_history    |
+                          +----------------------+
+                          | + reset()            |
+                          | + step()             |
+                          | + find_target(a)     |
+                          | + find_mate_same_species(a) |
+                          | + get_hunger_factor(a)      |
+                          +----------------------+
+                                      |
+                                      | uses
+                 ---------------------------------------------------------
+                 |                       |                               |
+         +---------------+       +-------------------+           +------------------+
+         |   Organism    |       |       Plant       |           |     Genome       |
+         +---------------+       +-------------------+           +------------------+
+         | - id          |       | - x, y            |           |  (dict structure)|
+         | - x, y        |       | - is_water        |           +------------------+
+         | - age         |       | - capacity        |           | + crossover()    |
+         | - energy      |       | - food            |           | + mutate()       |
+         | - water       |       | - water           |           | + random_genome()|
+         | - genome      |       +-------------------+           +------------------+
+         | - sex         |       | + update()        |
+         | - species     |       | + take_food()     |
+         | - angle       |       | + take_water()    |
+         | - cooldowns   |       +-------------------+
+         +---------------+
+         | + radius()    |
+         | + step_cost() |
+         +---------------+
+
+                     ↑                    ↑                     ↑
+                     |                    |                     |
+                     | created in         | created in          | used by
+                     | Simulation.reset() | Simulation.reset()   | Simulation.step()
+                     |                    |                     |
+                     ------------------------------------------------------
+
+
+                               +---------------------+
+                               |      physics.py     |
+                               +---------------------+
+                               | + move_toward()     |
+                               | + wander()          |
+                               | + clamp_position()  |
+                               +---------------------+
+                                        ↑
+                                        |
+                                 used by Simulation
+
+
+                       +---------------------------+
+                       |        utils.py           |
+                       +---------------------------+
+                       | + clamp()                 |
+                       | + dist_sq()              |
+                       | + rand_color()            |
+                       +---------------------------+
+                                        ↑
+                                        |
+                         used by genome, physics, organisms
+
+
