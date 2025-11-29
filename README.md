@@ -12,7 +12,7 @@ Organisms compete, evolve, mutate, reproduce & adapt — just like real Darwinia
 # 🎥 Simulation Preview
 <!-- Replace with your GIF -->
 <p align="center">
-  <img src="SIMULATION_GIF.gif" width="700">
+  <img src="SIMULATION_GIF2.gif" width="700">
 </p>
 
 ---
